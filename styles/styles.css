@@ -18,3 +18,62 @@ body {
   background-color: white;
   font-family: 'Roboto Condensed', sans-serif;
 }
+header {
+  position: fixed;
+  width: 100%;
+}
+
+#formulario {
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(230, 215, 215, 0.411);
+}
+
+.numero1 {
+  display: inline-block;
+  margin: 0 50px;
+}
+.numero1 label {
+  font-size: 30px;
+  color: black;
+  padding-right: 10px;
+}
+
+.container {
+  text-align: center;
+  padding-top: 80px;
+}
+
+.cuadrado {
+  display: inline-block;
+  background-color: black;
+  width: 300px;
+  height: 380px;
+  margin: 30px;
+}
+
+.letra {
+  font-size: 25px;
+  padding: 5px;
+  margin-top: 20px;
+  color: white;
+}
+
+img {
+  margin-top: 17px;
+  width: 200px;
+  height: 200px;
+  padding: 10px;
+}
+section .boton {
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  transition: all 1s ease;
+}
+section .boton:hover {
+  background: #ffffff;
+  color: red;
+}
