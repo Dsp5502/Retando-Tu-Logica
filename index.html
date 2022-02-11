@@ -13,11 +13,11 @@
       <form id="formulario" action="">
         <div class="numero1">
           <label for="numero1">1er numero</label>
-          <input type="number" placeholder="Número Positivo" name="numero1" />
+          <input id="numer1" type="number" min="0" placeholder="Número Positivo" name="numero1" />
         </div>
         <div class="numero1">
           <label for="numero2">2do numero</label>
-          <input type="number" placeholder="Número Positivo" name="numero2" />
+          <input id="numer2" type="number" min="0" placeholder="Número Positivo" name="numero2" />
         </div>
       </form>
     </header>
@@ -28,7 +28,7 @@
           Hallar el menor de dos números enteros positivos
           <br />
           <img src="image/menorQue.jpg" alt="" />
-          <button class="boton">Ver Resultado</button>
+          <button class="boton" onclick="operacion(1)">Ver Resultado</button>
         </div>
       </div>
 
@@ -37,7 +37,7 @@
           Determinar si los números ingresados son iguales
           <br />
           <img src="image/iguales.jpg" alt="" />
-          <button class="boton">Ver Resultado</button>
+          <button class="boton" onclick="operacion(2)" >Ver Resultado</button>
         </div>
       </div>
       
@@ -48,7 +48,7 @@
           Intercambiar los valores de los dos números
           <br />
           <img src="image/intercambiar.jpg" alt="" />
-          <button class="boton">Ver Resultado</button>
+          <button class="boton" onclick="operacion(3) ">Ver Resultado</button>
         </div>
       </div>
       <div class="cuadrado">
@@ -57,7 +57,7 @@
           <br>
           <br />
           <img src="image/suma.jpg" alt="" />
-          <button class="boton">Ver Resultado</button>
+          <button class="boton" onclick="operacion(4)">Ver Resultado</button>
         </div>
       </div>
       
