@@ -1,3 +1,4 @@
+//Traer info Input
 function getn1() {
   let numero1 = document.getElementById('numer1').value;
   return numero1;
@@ -8,20 +9,61 @@ function getn2() {
   return numero2;
 }
 
-function ValidarNumeroPositivo(numer1, numer2) {
-  if (numer1 < 0 || numer2 < 0) {
-    alert('Los numeros son invalidos');
+// Validar Input Vacios
+function validar1(numer1) {
+  if (numer1 == '') {
+    alert('Numero 1 Vacio');
+    return false;
+  } else {
+    return true;
+  }
+}
+function validar2(numer2) {
+  if (numer2 == '') {
+    alert('Numero 2 vacio');
+    return false;
+  } else {
+    return true;
   }
 }
 
+// Validar numeros positivos y enteros
+function ValidarNumeroPositivo(numer1, numer2) {
+  if (numer1 < 0 || numer2 < 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+function validarNumeroEntero(numer1, numer2) {
+  numEntero1 = Number.isInteger(numer1);
+  numEntero2 = Number.isInteger(numer2);
+  if (numEntero1 == false || numEntero2 == false) {
+    alert('Los numeros no son admitidos');
+  }
+}
+
+//funciones de los cuatro botones
+
+// En la funcion calcular menor  se esta calculando como dice el enunciado sin if else lo que se esta  calculando
+// con el if es si los numeros ingresados son iguales
 function calcularMenor(numer1, numer2) {
   arrmenor = [numer1, numer2];
-  numeroMenor = Math.min(...arrmenor);
-  alert(`El numero menor es ${numeroMenor}`);
+  if (arrmenor[0] == arrmenor[1]) {
+    alert(`Error: Los numeros son iguales `);
+  } else {
+    numeroMenor = Math.min(...arrmenor);
+    alert(`El numero menor es ${numeroMenor}`);
+  }
 }
 
 function numeroIgual(numer1, numer2) {
-  object.is(numer1, numer2);
+  let comparar = Object.is(numer1, numer2);
+  if (comparar) {
+    alert('Los numeros son iguales');
+  } else {
+    alert('Los numeros no son iguales');
+  }
 }
 
 function intercambiarValor(numer1, numer2) {
@@ -34,33 +76,43 @@ function intercambiarValor(numer1, numer2) {
 }
 
 function sum(numer1, numer2) {
-  let suma = Number(numer1) + Number(getn2(numer2));
+  let n1 = new Array(Number(numer1)).fill(1);
+  let n2 = new Array(Number(numer2)).fill(1);
+  n1 = n1.concat(n2);
+  console.log(n2);
 
-  alert(`la suma es ${suma}`);
+  console.log(n1.length);
+
+  alert(`la suma es ${n1.length}`);
 }
 
 function operacion(var1) {
   numero1 = getn1();
   numero2 = getn2();
 
-  ValidarNumeroPositivo(numero1, numero2);
+  if (validar1(numero1) == false || validar2(numero2) == false) {
+  } else {
+    if (ValidarNumeroPositivo(numero1, numero2)) {
+      alert('numero incorrecto');
+    } else {
+      switch (var1) {
+        case 1:
+          calcularMenor(numero1, numero2);
+          break;
+        case 2:
+          numeroIgual(numero1, numero2);
+          break;
+        case 3:
+          intercambiarValor(numero1, numero2);
+          break;
+        case 4:
+          sum(numero1, numero2);
+          break;
 
-  switch (var1) {
-    case 1:
-      calcularMenor(numero1, numero2);
-      break;
-    case 2:
-      numeroIgual(numero1, numero2);
-      break;
-    case 3:
-      intercambiarValor(numero1, numero2);
-      break;
-    case 4:
-      sum(numero1, numero2);
-      break;
-
-    default:
-      alert('Operacion no reconocida');
-      break;
+        default:
+          alert('Operacion no reconocida');
+          break;
+      }
+    }
   }
 }
