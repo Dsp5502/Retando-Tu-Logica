@@ -12,7 +12,7 @@ function getn2() {
 // Validar Input Vacios
 function validar1(numer1) {
   if (numer1 == '') {
-    alert('Numero 1 Vacio');
+    alert('Campo numero 2 vacio. Ingrese un numero');
     return false;
   } else {
     return true;
@@ -20,7 +20,7 @@ function validar1(numer1) {
 }
 function validar2(numer2) {
   if (numer2 == '') {
-    alert('Numero 2 vacio');
+    alert('Campo numero 2 vacio. Ingrese un numero');
     return false;
   } else {
     return true;
@@ -39,7 +39,9 @@ function validarNumeroEntero(numer1, numer2) {
   numEntero1 = Number.isInteger(numer1);
   numEntero2 = Number.isInteger(numer2);
   if (numEntero1 == false || numEntero2 == false) {
-    alert('Los numeros no son admitidos');
+    alert(
+      'Los numeros ingresados no son validos, ( Solo ingresar numeros enteros positivos'
+    );
   }
 }
 
@@ -49,20 +51,21 @@ function validarNumeroEntero(numer1, numer2) {
 // con el if es si los numeros ingresados son iguales
 function calcularMenor(numer1, numer2) {
   arrmenor = [numer1, numer2];
-  if (arrmenor[0] == arrmenor[1]) {
-    alert(`Error: Los numeros son iguales `);
+  sonIguales = Object.is(arrmenor[0], arrmenor[1]);
+  if (sonIguales) {
+    alert(`Error: Los numeros ingresados son iguales `);
   } else {
     numeroMenor = Math.min(...arrmenor);
-    alert(`El numero menor es ${numeroMenor}`);
+    alert(`El numero menor entre los dos numeros es ${numeroMenor}`);
   }
 }
 
 function numeroIgual(numer1, numer2) {
   let comparar = Object.is(numer1, numer2);
   if (comparar) {
-    alert('Los numeros son iguales');
+    alert('Los numeros ingresados son iguales');
   } else {
-    alert('Los numeros no son iguales');
+    alert('Los numeros ingresados no son iguales');
   }
 }
 
@@ -83,7 +86,7 @@ function sum(numer1, numer2) {
 
   console.log(n1.length);
 
-  alert(`la suma es ${n1.length}`);
+  alert(`la suma  de los numero ingresasdos es ${n1.length}`);
 }
 
 function operacion(var1) {
@@ -93,7 +96,9 @@ function operacion(var1) {
   if (validar1(numero1) == false || validar2(numero2) == false) {
   } else {
     if (ValidarNumeroPositivo(numero1, numero2)) {
-      alert('numero incorrecto');
+      alert(
+        'Los numeros ingresados no son validos, ( Solo ingresar numeros enteros positivos'
+      );
     } else {
       switch (var1) {
         case 1:
